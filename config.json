@@ -1,0 +1,15 @@
+{
+    "drive":[
+            { "file_id":"FILE_ID_HERE", "destination":"model_weights.pkl"}
+          ],
+    "model":{
+        "required":false,
+        "location":"model.h5",
+        "pickle":false
+    },
+    "weights":{
+        "required":true,
+        "location":"model_weights.pkl",
+        "pickle":true
+    }     
+}
