@@ -4,10 +4,12 @@ from tensorflow.keras.models import load_model
 from loader import get_from_pickle, ConfigLoader
 
 ## Here import your model and functions for pre-processing
-from model import compile_get_model
-
+from model import compile_get_model,single_picture_loader,generate_grad_cam
+from numpy import argmax
 
 def main():
+  img_path = 'COVID.png'
+
   EVALUATE_CONFIG = 'config.json'
   config = ConfigLoader(EVALUATE_CONFIG)
   
@@ -34,3 +36,8 @@ def main():
   
   ### Here goes the evaluation code for your own model (use model to predict)
   ## Ex: model.predict(...)
+
+  pred = model.predict(single_picture_loader(img_path))
+  print(argmax(pred,axis=1)[0])
+
+  generate_grad_cam(img_path,model,"gradcam.jpg")
