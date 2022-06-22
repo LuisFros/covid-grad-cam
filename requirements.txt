@@ -1,4 +1,4 @@
 scikit-image==0.17.1
-numpy==1.16.4
+numpy==1.22.0
 tensorflow-cpu==2.2.0
 matplotlib
